@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ali Baselizadeh</title>
+<meta name="description" content="Ali Baselizadeh — signal processing, philosophy of science, and computational psychiatry." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body class="theme-green" data-bg-image="index">
+<!--
+  Optional background painting for this page.
+  ADD YOUR IMAGE HERE: put a file named "background.jpg" in this same
+  folder (next to the html files) and it will appear automatically,
+  as a soft, low-opacity backdrop. Nothing shows until that file exists.
+-->
+<div class="bg-art"></div>
+<header class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-mark">Ali Baselizadeh</a>
+    <nav class="nav-links">
+      <a href="about.html">About</a>
+      <a href="research.html">Research</a>
+      <a href="writing.html">Writing</a>
+      <a href="cv.html">CV</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+<!--
+  =====================================================================
+  This is the HOME page. Each section now lives on its own page:
+  about.html, research.html, writing.html, cv.html, contact.html
+  All six pages share one stylesheet: style.css (edit colors there).
+  Keep every file in this same folder — they link to each other by name.
+  =====================================================================
+-->
+<div class="hero">
+  <h1>Signals, inference, <em>and the shape of a mind.</em></h1>
+  <p class="role"><span class="name">Ali Baselizadeh</span> — MSc student, Human-Centered AI, University of Milan. Working toward a PhD in computational psychiatry / neurophilosophy.</p>
+
+  <div class="hero-links">
+    <a href="about.html">About &rarr;</a>
+    <a href="research.html">Research &rarr;</a>
+    <a href="writing.html">Writing &rarr;</a>
+    <a href="cv.html">CV &rarr;</a>
+    <a href="contact.html">Contact &rarr;</a>
+  </div>
+
+  <!-- signature element: a hand-drawn line settling from noise into order, themed gradient -->
+  <svg class="wave" viewBox="0 0 700 90" preserveAspectRatio="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="waveGradient" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stop-color="#2f7d54" />
+        <stop offset="100%" stop-color="#1c5c3f" />
+      </linearGradient>
+    </defs>
+    <path d="M0,45 C10,10 20,80 30,40 C40,5 50,75 60,45 C70,15 80,70 90,42
+             C100,20 110,60 120,44 C130,25 140,55 150,44
+             C170,38 190,50 210,44 C230,40 250,48 270,44
+             C300,41 330,47 360,44 C400,42 440,46 480,44
+             C540,43 600,45 700,45" />
+  </svg>
+</div>
+<footer>
+  <div class="wrap"><p>&copy; <span id="year"></span> Ali Baselizadeh</p></div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

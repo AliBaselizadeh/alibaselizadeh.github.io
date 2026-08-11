@@ -1,0 +1,209 @@
+/* =====================================================================
+   SHARED STYLESHEET — used by every page (index.html, about.html, ...)
+   Keep this file in the SAME FOLDER as the html pages.
+   Change a color once here and it updates the whole site.
+===================================================================== */
+:root{
+  --bg:#e7e8ea;        /* page background — cool light grey (default / theme-blue) */
+  --panel:#dde0e3;     /* card / alt-section background, slightly darker grey */
+  --ink:#22262c;       /* primary text */
+  --slate:#63697a;     /* secondary / muted text */
+  --mist:#c3c6cc;      /* borders, dividers */
+  --blue:#3f5c85;      /* accent 1 */
+  --rose:#9c5875;      /* accent 2 */
+  --maxw:760px;
+}
+
+/* ---------- Page color themes ----------
+   Each page carries one of these classes on <body>.
+   Change values here to retune a theme across every page that uses it. */
+body.theme-blue{
+  --bg:#e7e8ea; --panel:#dde0e3; --ink:#22262c; --slate:#63697a; --mist:#c3c6cc;
+  --blue:#3f5c85; --rose:#9c5875;
+}
+body.theme-brick{
+  --bg:#f3ece1; --panel:#ece1d0; --ink:#3a241c; --slate:#8a6a58; --mist:#dcc9b0;
+  --blue:#7a2e22; --rose:#a85338;
+}
+body.theme-green{
+  --bg:#ffffff; --panel:#eaf1ec; --ink:#12261c; --slate:#4b6358; --mist:#cfe0d5;
+  --blue:#1c5c3f; --rose:#2f7d54;
+}
+body[data-bg-image="index"] .bg-art{ background-image:url('bg-green.jpg'); }
+body[data-bg-image="about"] .bg-art{ background-image:url('bg-brick.jpg'); }
+body[data-bg-image="research"] .bg-art{ background-image:url('bg-research.jpg'); }
+body[data-bg-image="writing"] .bg-art{ background-image:url('bg-brick.jpg'); }
+body[data-bg-image="cv"] .bg-art{ background-image:url('bg-cv.jpg'); }
+body[data-bg-image="contact"] .bg-art{ background-image:url('bg-green.jpg'); }
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:'Inter',sans-serif;
+  font-size:16px;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{
+  font-family:'Newsreader',serif;
+  font-weight:500;
+  color:var(--ink);
+  margin:0;
+}
+a{color:var(--blue);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .2s,color .2s;}
+a:hover, a:focus-visible{border-bottom-color:var(--blue);}
+::selection{background:var(--rose);color:#fff;}
+
+/* Justified body text throughout the site */
+p, li, .lede, .cv-item .d{
+  text-align:justify;
+  text-justify:inter-word;
+  hyphens:auto;
+  -webkit-hyphens:auto;
+}
+h1,h2,h3,.eyebrow,.nav-links a,.nav-mark,.hero-links a,.contact-list a,.skill-tag,.entry .meta{
+  text-align:left; /* headings/labels/short lines stay left-aligned, never justified */
+}
+
+/* Optional background painting layer — the actual image URL is set per
+   page via body[data-bg-image] above; this just handles position/fade. */
+.bg-art{
+  position:fixed;inset:0;z-index:-1;
+  background-position:center;background-size:cover;background-repeat:no-repeat;
+  opacity:.10;
+  pointer-events:none;
+}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+.eyebrow{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.72rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--rose);
+}
+
+/* ---------- Nav (identical block on every page) ---------- */
+header.nav{
+  position:sticky;top:0;z-index:20;
+  background:rgba(231,232,234,.88);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--mist);
+}
+.nav-inner{
+  max-width:var(--maxw);margin:0 auto;padding:16px 24px;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
+}
+.nav-mark{font-family:'Newsreader',serif;font-style:italic;font-size:1.05rem;color:var(--ink);border-bottom:none;}
+.nav-links{display:flex;gap:22px;flex-wrap:wrap;}
+.nav-links a{font-size:.85rem;color:var(--slate);border-bottom:none;}
+.nav-links a:hover{color:var(--ink);}
+.nav-links a.active{color:var(--blue);}
+
+/* ---------- Hero (index.html only) ---------- */
+.hero{max-width:var(--maxw);margin:0 auto;padding:88px 24px 60px;}
+.hero h1{font-size:clamp(2.4rem,6vw,3.8rem);line-height:1.15;max-width:12ch;}
+.hero h1 em{font-style:italic;color:var(--rose);}
+.hero p.role{margin-top:18px;color:var(--slate);font-size:1.02rem;max-width:46ch;}
+.hero p.role .name{color:var(--ink);}
+.hero-links{margin-top:36px;display:flex;gap:22px;flex-wrap:wrap;}
+.hero-links a{font-family:'JetBrains Mono',monospace;font-size:.82rem;color:var(--blue);}
+
+.wave{width:100%;height:auto;margin-top:52px;display:block;}
+.wave path{
+  fill:none;stroke:url(#waveGradient);stroke-width:1.5;
+  stroke-dasharray:1400;stroke-dashoffset:1400;
+  animation:draw 2.6s ease-out .3s forwards;
+}
+@keyframes draw{to{stroke-dashoffset:0;}}
+@media (prefers-reduced-motion: reduce){
+  .wave path{animation:none;stroke-dashoffset:0;}
+  html{scroll-behavior:auto;}
+}
+
+/* ---------- Page header (subpages: about / research / writing / cv / contact) ---------- */
+.page-head{max-width:var(--maxw);margin:0 auto;padding:64px 24px 8px;}
+.page-head h1{font-size:clamp(2rem,4.5vw,2.6rem);}
+
+/* ---------- Sections ---------- */
+section{padding:56px 0 64px;}
+section .head{display:flex;align-items:baseline;gap:14px;margin-bottom:32px;}
+section .head h2{font-size:clamp(1.5rem,3vw,1.9rem);}
+
+.lede{max-width:56ch;color:var(--ink);}
+.lede + .lede{margin-top:16px;}
+.muted{color:var(--slate);}
+
+/* portrait placeholder */
+.portrait-slot{
+  width:132px;height:132px;border-radius:50%;
+  border:1px solid var(--mist);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--slate);font-family:'JetBrains Mono',monospace;font-size:.68rem;
+  text-align:center;padding:10px;margin-bottom:28px;
+  background:var(--panel);
+}
+
+/* ---------- Research cards ---------- */
+.projects{display:flex;flex-direction:column;gap:0;}
+.project{
+  display:grid;grid-template-columns:56px 1fr;gap:18px;
+  padding:26px 0;border-top:1px solid var(--mist);
+}
+.project:first-child{border-top:none;padding-top:0;}
+.project .num{font-family:'JetBrains Mono',monospace;font-size:.85rem;padding-top:3px;}
+.project:nth-child(odd) .num{color:var(--blue);}
+.project:nth-child(even) .num{color:var(--rose);}
+.project h3{font-size:1.15rem;font-weight:500;margin-bottom:8px;}
+.project p{color:var(--slate);margin:0;font-size:.96rem;}
+.project .with{display:inline-block;margin-top:10px;font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--slate);}
+
+/* ---------- Writing ---------- */
+.entry{padding:24px 0;border-top:1px solid var(--mist);}
+.entry:first-child{border-top:none;padding-top:0;}
+.entry .meta{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--rose);letter-spacing:.06em;margin-bottom:8px;}
+.entry h3{font-size:1.1rem;font-weight:500;margin-bottom:8px;}
+.entry p{color:var(--slate);margin:0;font-size:.95rem;}
+
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;margin-top:24px;}
+.gallery .frame{
+  aspect-ratio:16/9;border:1px solid var(--mist);border-radius:8px;
+  display:flex;align-items:center;justify-content:center;overflow:hidden;
+  color:var(--slate);font-family:'JetBrains Mono',monospace;font-size:.62rem;text-align:center;padding:0;
+  background:var(--panel);
+}
+.gallery img{width:100%;height:100%;object-fit:cover;border-radius:8px;}
+
+/* ---------- CV ---------- */
+.cv-grid{display:grid;grid-template-columns:1fr;gap:36px;}
+@media(min-width:640px){.cv-grid{grid-template-columns:1fr 1fr;}}
+.cv-block h3{
+  font-family:'JetBrains Mono',monospace;font-size:.78rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--blue);font-weight:500;margin-bottom:16px;
+}
+.cv-item{margin-bottom:14px;}
+.cv-item .t{font-size:.95rem;color:var(--ink);}
+.cv-item .d{font-size:.82rem;color:var(--slate);}
+.skills-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;}
+.skill-tag{
+  font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--ink);
+  border:1px solid var(--mist);border-radius:999px;padding:4px 12px;
+  background:var(--panel);
+}
+.cv-download{margin-top:28px;font-size:.88rem;}
+
+/* ---------- Contact ---------- */
+.contact-list{display:flex;flex-direction:column;gap:10px;margin-top:22px;}
+.contact-list a{font-size:1rem;}
+.contact-list .label{color:var(--slate);font-family:'JetBrains Mono',monospace;font-size:.72rem;display:inline-block;width:110px;}
+
+footer{padding:40px 0 60px;text-align:center;}
+footer p{color:var(--slate);font-size:.8rem;font-family:'JetBrains Mono',monospace;}
+
+@media(max-width:600px){
+  .nav-links{gap:14px;}
+  .project{grid-template-columns:1fr;}
+}

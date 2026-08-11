@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Writing — Ali Baselizadeh</title>
+<meta name="description" content="Essays and notes." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body class="theme-brick" data-bg-image="writing">
+<!--
+  Optional background painting for this page.
+  ADD YOUR IMAGE HERE: put a file named "background.jpg" in this same
+  folder (next to the html files) and it will appear automatically,
+  as a soft, low-opacity backdrop. Nothing shows until that file exists.
+-->
+<div class="bg-art"></div>
+<header class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-mark">Ali Baselizadeh</a>
+    <nav class="nav-links">
+      <a href="about.html">About</a>
+      <a href="research.html">Research</a>
+      <a href="writing.html" class="active">Writing</a>
+      <a href="cv.html">CV</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+<div class="page-head"><span class="eyebrow">03 &mdash; Writing</span><h1>Essays &amp; notes</h1></div>
+<section id="writing">
+  <div class="wrap">
+    <div class="entries">
+      <article class="entry">
+        <div class="meta">PHILOSOPHY OF MIND</div>
+        <h3>Modeling the Fragmented Self</h3>
+        <p>An essay on the sense of agency and ego dissolution in psychiatric contexts, built on Haggard's comparator model of motor cognition. Written as a writing sample for PhD applications.</p>
+      </article>
+
+      <article class="entry">
+        <div class="meta">TRANSLATION</div>
+        <h3>Computational Psychiatry: A Primer &mdash; Persian translation</h3>
+        <p>A full Persian translation of Peggy Seri&egrave;s' textbook (MIT Press), including a 220-term technical glossary &mdash; an attempt to make the field legible to Persian-speaking students and clinicians.</p>
+      </article>
+
+      <!--
+        ADD A NEW WRITING HERE:
+        Copy everything from <article class="entry"> to </article> above,
+        paste it here, then change the category label, title, and text.
+
+        <article class="entry">
+          <div class="meta">CATEGORY LABEL</div>
+          <h3>Title of the piece</h3>
+          <p>One or two sentences describing it, or the full text if it's short.</p>
+        </article>
+      -->
+    </div>
+
+    <!-- Your two neuron images, now landscape. Add more by dropping a new
+         file (e.g. gallery-3.jpg) in this folder and copying a .frame block. -->
+    <div class="gallery">
+      <div class="frame"><img src="gallery-1.jpg" alt="Purkinje cells, stained neurons under the microscope" /></div>
+      <div class="frame"><img src="gallery-2.jpg" alt="Reconstructed neuron with dendritic tree" /></div>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="wrap"><p>&copy; <span id="year"></span> Ali Baselizadeh</p></div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
