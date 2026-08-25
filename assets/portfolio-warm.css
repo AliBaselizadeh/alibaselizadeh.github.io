@@ -1,0 +1,92 @@
+/* Warm editorial layer — loaded after the compiled portfolio bundle. */
+:root {
+  --warm-paper: #fbf5ed;
+  --warm-cream: #f2e4d6;
+  --warm-blush: #edcdbd;
+  --warm-ink: #2d1d1d;
+  --warm-muted: #6e4e49;
+  --warm-burgundy: #7d2732;
+  --warm-brick: #ad513d;
+  --warm-line: rgba(93, 42, 41, 0.16);
+}
+
+.site-shell {
+  --paper: var(--warm-paper);
+  --paper-deep: var(--warm-cream);
+  --ink: var(--warm-ink);
+  --ink-soft: var(--warm-muted);
+  --celadon: var(--warm-burgundy);
+  --celadon-light: var(--warm-blush);
+  --brick: var(--warm-brick);
+  --line: var(--warm-line);
+  background: var(--warm-paper);
+}
+
+body { background: var(--warm-paper); color: var(--warm-ink); }
+.site-header {
+  background: rgba(251, 245, 237, 0.96);
+  border-bottom-color: transparent;
+  box-shadow: 0 1px 0 rgba(93, 42, 41, 0.08);
+}
+.site-nav a:hover,
+.site-nav a.active,
+.text-link,
+.kicker,
+.project-tag,
+.entry-code,
+.read-note,
+.contact-location { color: var(--warm-burgundy); }
+.button-ink { background: var(--warm-ink); color: var(--warm-paper); }
+.button-ink:hover { background: var(--warm-burgundy); }
+em { color: var(--warm-burgundy); }
+
+.hero-canvas {
+  background:
+    linear-gradient(90deg, rgba(251, 245, 237, 0.99) 0%, rgba(251, 245, 237, 0.97) 45%, rgba(251, 245, 237, 0.82) 70%, rgba(251, 245, 237, 0.95) 100%),
+    url('/media/img0062-neural-tracts-landscape.webp') center 48% / cover;
+  filter: saturate(0.52) sepia(0.08) contrast(0.9);
+}
+.research-canvas,
+.writing-canvas,
+.cv-canvas,
+.contact-canvas { filter: saturate(0.55) sepia(0.12); opacity: 0.62; }
+.area-section { background: #3a2222; }
+.area-section .section-marker { color: var(--warm-blush); }
+.area-section .section-marker i { background: var(--warm-blush); }
+.areas-heading .eyebrow-copy { color: var(--warm-blush); }
+
+/* Retain hierarchy through space and typography, not ornamental rules. */
+.section-marker,
+.route-stem,
+.hero-trace,
+.hero-annotation,
+.fracture-corner::before,
+.fracture-corner::after { display: none; }
+.brand-code,
+.site-nav a small,
+.portrait-meta span:first-child,
+.area-number { display: none !important; }
+.portrait-meta { justify-content: flex-end; }
+.project-stack,
+.project-card,
+.bio-paragraphs,
+.bio-paragraphs p,
+.entry-list,
+.essay-entry,
+.cv-line,
+.skill-grid,
+.skill-grid span,
+.publication-strip,
+.contact-list,
+.contact-list a { border-color: transparent; }
+.project-card:hover,
+.contact-list a:hover { background: rgba(125, 39, 50, 0.06); }
+.cv-identity { background: rgba(242, 228, 214, 0.78); border-color: transparent; }
+.portrait-module { background: transparent; }
+.atlas-shell { --atlas-jade: var(--warm-burgundy) !important; --atlas-red: var(--warm-brick) !important; }
+.site-footer { background: #3a2222; color: rgba(251, 245, 237, 0.68); }
+.footer-frame a { color: var(--warm-blush); }
+
+@media (max-width: 820px) {
+  .site-nav { background: rgba(251, 245, 237, 0.99); border-bottom-color: transparent; }
+}
