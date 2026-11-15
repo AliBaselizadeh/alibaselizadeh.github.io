@@ -1,73 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Research — Ali Baselizadeh</title>
-<meta name="description" content="Four active research projects." />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="style.css" />
+<meta name="description" content="Philosophy of cognitive science, philosophy of neuroscience, and computational modelling projects." />
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" /><link rel="stylesheet" href="style.css" />
 </head>
-<body class="theme-blue" data-bg-image="research">
-<!--
-  Optional background painting for this page.
-  ADD YOUR IMAGE HERE: put a file named "background.jpg" in this same
-  folder (next to the html files) and it will appear automatically,
-  as a soft, low-opacity backdrop. Nothing shows until that file exists.
--->
-<div class="bg-art"></div>
-<header class="nav">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-mark">Ali Baselizadeh</a>
-    <nav class="nav-links">
-      <a href="about.html">About</a>
-      <a href="research.html" class="active">Research</a>
-      <a href="writing.html">Writing</a>
-      <a href="cv.html">CV</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </div>
-</header>
-<div class="page-head"><span class="eyebrow">02 &mdash; Research</span><h1>Four active projects</h1></div>
-<section id="research">
-  <div class="wrap">
-    <div class="projects">
-      <div class="project">
-        <div class="num">01</div>
-        <div>
-          <h3>Circuit versus Diagnosis</h3>
-          <p>A systematic review and meta-regression testing whether the site of stimulation, rather than diagnostic category, better predicts the cognitive effects of tDCS &mdash; working memory, response inhibition, and cognitive flexibility &mdash; across psychiatric disorders.</p>
-        </div>
-      </div>
-      <div class="project">
-        <div class="num">02</div>
-        <div>
-          <h3>Complexity as a Marker of Consciousness</h3>
-          <p>A scoping review mapping the Perturbational Complexity Index and related TMS-EEG complexity measures across disorders of consciousness, schizophrenia, ego dissolution, and Alzheimer's disease.</p>
-        </div>
-      </div>
-      <div class="project">
-        <div class="num">03</div>
-        <div>
-          <h3>Resting-State EEG Complexity</h3>
-          <p>Testing whether complexity biomarkers &mdash; Lempel-Ziv complexity, permutation entropy, and the spectral exponent &mdash; generalize across two open EEG datasets, implemented in MNE-Python with FOOOF.</p>
-        </div>
-      </div>
-      <div class="project">
-        <div class="num">04</div>
-        <div>
-          <h3>Breath, Belief, and the Zar Ritual</h3>
-          <p>A theoretical paper framing respiratory interoception and precision re-weighting as a computational account of Zar healing rituals, with spirit possession treated as a cultural prior.</p>
-          <span class="with">with Prof. Maryam Gharasou, ethnomusicology, University of Tehran</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<footer>
-  <div class="wrap"><p>&copy; <span id="year"></span> Ali Baselizadeh</p></div>
-</footer>
-<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-</body>
-</html>
+<body class="theme-blue" data-bg-image="research"><div class="bg-art"></div>
+<header class="nav"><div class="nav-inner"><a href="index.html" class="nav-mark">Ali Baselizadeh</a><nav class="nav-links"><a href="about.html">About</a><a href="research.html" class="active">Research</a><a href="writing.html">Writing</a><a href="cv.html">CV</a><a href="contact.html">Contact</a></nav></div></header>
+<div class="page-head"><span class="eyebrow">02 &mdash; Research</span><h1>Questions made testable</h1></div>
+<section id="research"><div class="wrap"><p class="lede muted">My work moves between conceptual analysis and formal modelling. I use concrete systems to test claims about cognition, explanation, and the boundary between the cognitive and the noncognitive.</p><div class="projects">
+<div class="project"><div class="num">01</div><div><h3>Distal sensitivity and the mark of the noncognitive</h3><p>A philosophy of cognitive science project separating causal, informational, and normative readings of distal sensitivity. The argument tests a proposed mark of the noncognitive against Kalman filters, internal-model controllers, and bacterial memory in <em>E. coli</em>.</p></div></div>
+<div class="project"><div class="num">02</div><div><h3>Is the human explorer a Kalman filter?</h3><p>A Bayesian reanalysis of open exploration data comparing Kalman-filter and delta-rule learners with hierarchical Bayesian probit models, PSIS-LOO, model recovery, and parameter recovery.</p><span class="with"><a href="https://github.com/AliBaselizadeh/kalman-exploration" target="_blank" rel="noopener">Public repository &rarr;</a></span></div></div>
+<div class="project"><div class="num">03</div><div><h3>From contribution to necessity</h3><p>A philosophy of cognitive neuroscience essay on premotor signals, intentional binding, and the sense of agency. It evaluates whether the evidence supports a contribution claim, a necessity claim, or an inferential account.</p></div></div>
+<div class="project"><div class="num">04</div><div><h3>Whose inference?</h3><p>A critical review of predictive-processing accounts of spirit possession, using Zar rituals in Hormozgan as a test case. A minimal multi-agent simulation examines how explicit claim-checking between ritual specialists changes identification accuracy.</p><span class="with">with Assist. Prof. Maryam Gharasou, University of Tehran</span></div></div>
+<div class="project"><div class="num">05</div><div><h3>Controllability, precision and block structure in pain ratings</h3><p>A reanalysis of Habermann and B&uuml;chel&rsquo;s pain-controllability study using the authors&rsquo; code and data, examining precision specifications, block-level validation, and the stability of the reported controllability effect.</p><span class="with">with Amir Hakimjavadi, Universitat Rovira i Virgili</span></div></div>
+</div></div></section>
+<footer><div class="wrap"><p>&copy; <span id="year"></span> Ali Baselizadeh</p></div></footer><script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body></html>
